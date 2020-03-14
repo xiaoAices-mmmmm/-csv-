@@ -6,7 +6,7 @@ import time
 csv_file = 'csvdatetest.csv'
 class request_csv:
     def __init__(self,csv_file):
-        self.csv_file=csv_file
+        self.__csv_file=csv_file
     #读取csv数据并添加为列表
     def read_csv(self,filename):
         '''
@@ -102,7 +102,7 @@ class request_csv:
         result_file = "result_{}.csv".format(str(time.time()).split('.')[0])
 
         #读取指定文件中的数据
-        read_date = self.read_csv(csv_file)
+        read_date = self.read_csv(self.__csv_file)
 
         if read_date.__len__() > 0: #检查read_date 中是否有数据有数据直接调用测试
             resulit = []
